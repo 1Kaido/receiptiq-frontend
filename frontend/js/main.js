@@ -4,9 +4,9 @@ import { drawCategoryPieChart, drawExpenseTrend, renderRecentReceipts, renderTop
 console.log("main");
 
 const navItems = document.querySelectorAll(".nav-item");
-navItems[1].addEventListener("click", () => { window.location.href = "/frontend/receipts.html"; });
-navItems[2].addEventListener("click", () => { window.location.href = "/frontend/analytics.html"; });
-navItems[3].addEventListener("click", () => { window.location.href = "/frontend/profile.html"; });
+navItems[1].addEventListener("click", () => { window.location.href = "./receipts.html"; });
+navItems[2].addEventListener("click", () => { window.location.href = "./analytics.html"; });
+navItems[3].addEventListener("click", () => { window.location.href = "./profile.html"; });
 
 async function init() {
   // Show loader, hide content
