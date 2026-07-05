@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countBadge = document.getElementById("receiptCount");
 
   document.getElementById("backBtn").addEventListener("click", () => {
-    window.location.href = "/frontend/index.html";
+    window.location.href = "./index.html";
   });
 
   async function getAllReceipts() {

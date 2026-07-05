@@ -2,6 +2,6 @@ document
 .getElementById("backBtn")
 .onclick=()=>{
 
-location.href="/frontend/index.html";
+location.href="./index.html";
 
 }
