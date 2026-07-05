@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReceiptIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="logo">Receipt<span>IQ</span></div>
+    <button class="icon-btn" id="notifBtn" aria-label="Notifications">
+      <i class="fa-regular fa-bell"></i>
+    </button>
+  </header>
+
+  <!-- GREETING -->
+  <section class="greeting">
+    <div>
+      <h2>Hello, Yukiya &#128075;</h2>
+      <p>Here's your expense overview</p>
+    </div>
+    <button class="month-btn">
+      <i class="fa-regular fa-calendar"></i> This Month
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+  </section>
+
+  <!-- UPLOAD BANNER -->
+  <div class="upload-banner">
+    <div class="banner-icon">
+      <i class="fa-solid fa-cloud-arrow-up"></i>
+    </div>
+    <div class="banner-text">
+      <h4>Upload a Receipt</h4>
+      <p>Scan or upload any receipt to extract and track expenses</p>
+    </div>
+    <button class="btn-primary" id="uploadBtn">
+      <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload
+    </button>
+  </div>
+
+  <!-- SKELETON LOADER -->
+  <div id="dashboardLoader">
+    <div class="skel-banner"></div>
+    <div class="skel-stats">
+      <div class="skel-card"></div>
+      <div class="skel-card"></div>
+      <div class="skel-card"></div>
+      <div class="skel-card"></div>
+    </div>
+    <div class="skel-chart"></div>
+  </div>
+
+  <!-- DASHBOARD CONTENT -->
+  <div id="dashboardContent" class="hidden">
+
+    <!-- STAT CARDS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon purple"><i class="fa-solid fa-file-invoice"></i></div>
+        <h3 id="totalReceipts">0</h3>
+        <p>Receipts</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+        <h3 id="totalSpent">0</h3>
+        <p>Total Spent</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon orange"><i class="fa-solid fa-calculator"></i></div>
+        <h3 id="avgExpense">0</h3>
+        <p>Avg Expense</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon blue"><i class="fa-solid fa-layer-group"></i></div>
+        <h3 id="totalCategories">0</h3>
+        <p>Categories</p>
+      </div>
+    </div>
+
+    <!-- CHARTS ROW -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <h4>By Category</h4>
+        <div class="pie-wrap">
+          <canvas id="categoryPieChart"></canvas>
+        </div>
+        <div class="legend" id="pieLegend"></div>
+      </div>
+      <div class="chart-card">
+        <h4>Spending Over Time</h4>
+        <div class="line-chart-container">
+          <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOP VENDOR -->
+    <section class="section">
+      <h4 class="section-title">Top Vendor</h4>
+      <div class="vendor-card">
+        <div class="vendor-logo">
+          <i class="fa-solid fa-store"></i>
+        </div>
+        <div class="vendor-info">
+          <h5 id="vendorName">—</h5>
+          <p id="vendorAmount" class="vendor-amount">&#8377;0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT RECEIPTS -->
+    <section class="section">
+      <div class="section-header">
+        <h4 class="section-title">Recent Receipts</h4>
+        <a href="/frontend/receipts.html" class="view-all">View All</a>
+      </div>
+      <div id="recentReceipts">
+        <div class="empty-state">
+          <i class="fa-regular fa-folder-open"></i>
+          <p>No receipts yet — upload one!</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- end dashboardContent -->
+
+  <!-- BOTTOM NAV — outside dashboardContent so always visible -->
+  <nav class="bottom-nav">
+    <button class="nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" id="navReceipts">
+      <i class="fa-solid fa-receipt"></i>
+      <span>Receipts</span>
+    </button>
+    <button class="nav-item" id="navAnalytics">
+      <i class="fa-solid fa-chart-pie"></i>
+      <span>Analytics</span>
+    </button>
+    <button class="nav-item" id="navProfile">
+      <i class="fa-solid fa-circle-user"></i>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <!-- OVERLAY -->
+  <div id="overlay"></div>
+
+  <!-- BOTTOM SHEET -->
+  <div id="bottomSheet" role="dialog" aria-modal="true">
+    <div class="sheet-handle"></div>
+    <p class="sheet-title">Add Receipt</p>
+    <button class="sheet-btn" id="cameraOption">
+      <span class="sheet-btn-icon"><i class="fa-solid fa-camera"></i></span>
+      Take a Photo
+    </button>
+    <button class="sheet-btn" id="galleryOption">
+      <span class="sheet-btn-icon"><i class="fa-solid fa-images"></i></span>
+      Choose from Gallery
+    </button>
+    <button class="sheet-btn cancel" id="cancelOption">
+      <span class="sheet-btn-icon"><i class="fa-solid fa-xmark"></i></span>
+      Cancel
+    </button>
+  </div>
+
+  <!-- CAMERA -->
+  <div id="cameraContainer">
+    <video id="video" autoplay playsinline></video>
+    <div class="cam-controls">
+      <button class="cam-btn secondary" id="closeBtn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <button class="cam-btn primary" id="snapBtn">
+        <i class="fa-solid fa-camera"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div id="previewContainer">
+    <img id="previewImage" alt="Receipt preview">
+    <div class="preview-btns">
+      <button class="cam-btn secondary" id="retakeBtn">
+        <i class="fa-solid fa-rotate-left"></i> Retake
+      </button>
+      <button class="cam-btn primary" id="submitBtn">
+        <i class="fa-solid fa-check"></i> Submit
+      </button>
+    </div>
+  </div>
+
+  <canvas id="canvas" hidden></canvas>
+  <input type="file" id="fileInput" accept="image/*" hidden>
+
+  <!-- JS: only two script tags, properly closed -->
+  <script type="module" src="/frontend/js/camera.js"></script>
+  <script type="module" src="/frontend/js/main.js"></script>
+
+</body>
+</html>

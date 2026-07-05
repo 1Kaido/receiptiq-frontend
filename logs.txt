@@ -1,0 +1,205 @@
+#Entry: 3/7/26 ~ 12:00AM Building ReceiptIQ its looking Hard but today target is successful send Img to backend 
+#Exit: 3/7/26 ~ 2:21AM and finnally 
+* Restarting with stat
+Starting ReceiptIQ Backend...
+ * Debugger is active!
+ * Debugger PIN: 116-918-162
+file <FileStorage: 'Screenshot_20260701_213314.jpg' ('image/jpeg')>
+127.0.0.1 - - [03/Jul/2026 02:20:39] "POST /upload HTTP/1.1" 200 -
+
+ success i make it uff took a long noe img getting to Backend now i need to image to text 
+ 
+ #Entry: 3/7/26 ~ 10:55AM 
+   Target make OCR image to text,text to catagory then A DB
+  #11:15AM: uff fixing error now running the API testing time more errors 
+  #11:26AM: ' ('image/jpeg')>
+   A Symptom Of Being Human - Shinedown (Lyrics)
+   A
+   RANDOM
+   WALK
+   DEWN
+   WALL
+   STREET
+   THE BOUT SENILE E 00
+   BURTON G. MALKIEL
+   127.0.0.1 - - [03/Jul/2026 11:25:59] "POST /upload HTTP/1.1" 200
+   Just look at the output let Gooo 
+  #Phone is crashing in between 
+ #Exit: 12:01PM logout
+ #Entry: 3/7/26 ~2:55PM 
+   A new prob arises SDK fixed it
+   now using Mindee API let run and
+   see
+  #3:45PM and here i did it look at this:
+  file <FileStorage: 'images (12).jpeg' ('image/jpeg')>
+Inference
+#########
+Job
+===
+:ID: 782cfe33-4173-4be6-a9a7-ede7885e5888
+
+Model
+=====
+:ID: eeba47fe-6a50-4b27-9b79-d1b614edad5f
+
+File
+====
+:Name: images (12).jpeg
+:Alias:
+:Page Count: 1
+:MIME Type: image/jpeg
+
+Active Options
+==============
+:Raw Text: False
+:Polygon: False
+:Confidence: False
+:RAG: False
+:Text Context: False
+
+Data Schema
+-----------
+:Replace: False
+
+Fields
+======
+:supplier_name: Connaught Plaza Restaurants Pvt. Ltd.
+:supplier_address: Shop No SAG-28/29 & SRG-05
+Ansal Plaza, Feroz Pur Road
+Ludhiana, Punjab
+State Code 03
+:supplier_phone_number: 9878622216
+:supplier_company_registration:
+  * :number: 03AAACC1201E1ZT
+    :type: GSTIN
+  * :number: U74899DL1995PTC070306
+    :type: UID
+:receipt_number:
+:date: 2018-07-10
+:time: 17:38:13
+:total_amount: 342.0
+:total_net: 326.0
+:total_tax: 16.3
+:taxes:
+  * :rate: 0.025
+    :base: 326.0
+    :amount: 8.15
+  * :rate: 0.025
+    :base: 326.0
+    :amount: 8.15
+:tips_gratuity:
+:line_items:
+  * :description: Pizza McPuftx
+    :quantity: 2.0
+    :unit_price: 29.0
+    :total_price: 58.0
+  * :description: McAloo Tikki*
+    :quantity: 1.0
+    :unit_price: 35.0
+    :total_price: 35.0
+  * :description: McVeggie*
+    :quantity: 2.0
+    :unit_price: 79.0
+    :total_price: 158.0
+  * :description: Med Fries
+    :quantity: 1.0
+    :unit_price: 75.0
+    :total_price: 75.0
+:document_type: expense_receipt
+:purchase_category: food
+:purchase_subcategory: restaurant
+:locale:
+  :language: en
+  :country: IN
+  :currency: INR
+
+INFO:werkzeug:127.0.0.1 - - [03/Jul/2026 15:44:23] "POST /upload HTTP/1.1" 200 -
+
+   damnnnnnnnnnn now let save this
+   in a DB now Target 1 is done now
+   make A DB and save all
+ #Exit: 3/7/26 ~4:43PM 
+   So i have Make Schemes DB charge is 6% that why leaving next is CURD opration then Dashboard AI ufffff
+#Entry: 8:50PM 
+      Some more errors 
+#Exit: 1hr of code i have completed saving data in a database save_receipt() is done a lot lot errors 
+
+#Entry: 4/7/26 ~ 2:20PM since went
+    to college so i can't code at night now im starting code
+#Exit: 4/7/26 ~ 3PM whyyyyyyyy SDKK!!!!!! U CAN'T return a simple dictionary tooo errors just to insert a simple dataaaaaa whyyyyyyyyyyyyyyy 
+#Entry: 4/7/26 ~ 6:55PM time to 
+    Debug SDK
+#Exit: 4/7/26 ~ 8:10PM i have completed Graphs and all data send to Frontend using library in js now style using Claude 
+#Entry: 4/7/26 ~ 10:10PM 
+#Exit: 4/7/26 ~ 11:30PM
+    Fix graphs CSS and HTML updated
+  using Claude and looks good
+  now need to fix the bug of currency like if receipt is in US im getting in US
+#Entry: 5/7/26 ~ 1:05AM Tommorow Sunday let fix some errors 
+    #1:20AM ~ Done Currency issue fixed simple 
+    #2:58AM ~ uffff styling done with AI added 3 HTML Reciept, Analysis, Profile currently profiles empty analysis thinking to use A AI api send me all expenses data he will provide insights 
+#Exit: 5/7/26 ~ 3:52AM a long A long debugging session a long i sign up in groq for inslights its running let it its getting late tiemti sleep in the morning noooo wayyyy this error: 
+el.py:4: FutureWarning: The 'wheel' package is no longer the canonical location of the 'bdist_wheel' command, and will be removed in a future release. Please update to setuptools v70.1 or later which contains an integrated version of this command.
+warn(
+Python reports SOABI: cpython-313-aarch64-linux-android
+Computed rustc target triple: aarch64-unknown-linux-android
+Target triple not supported by rustup: aarch64-unknown-linux-android
+Rust not found, installing into a temporary directory
+[end of output]
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> maturin
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+[end of output]
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'pydantic-core' when installing build dependencies for pydantic-core
+~ $
+  this error no wayyyyyyy morning will be the most headache yep i choose to be the GREATEST so I have to FACE this if BECOMING GREAT WAS EASY EVERYONE would BE
+  
+#Entry: 5/7/26 ~ 11:31AM so this API will be a headache let goo 
+  #11:48AM dudeeee
+  WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 799-885-093
+INFO:werkzeug:127.0.0.1 - - [05/Jul/2026 11:46:47] "GET /receipts HTTP/1.1" 200 -
+RUNNING AI INSIGHTS...
+{'summary_line': 'You spent ₹5500.82 this period, mostly on shopping.', 'spending_personality': 'The Shopaholic', 'insights': ['Spent ₹3304.89 at ZARA', 'Ate ₹2195.93 worth of food', '4 transactions this period', 'Avg transaction: ₹1375.2'], 'warnings': ['ZARA took 60.08% of budget'], 'tip_of_the_day': 'Consider budgeting ₹1375.2 per transaction for better control', 'detailed_advice': {'food': 'Try cooking at home to reduce ₹2195.93 food expenses', 'shopping': 'Limit ZARA spending to avoid overspending'}, 'monthly_forecast': 'Based on current pace, you will spend approximately ₹5500.82 this month', 'score': {'value': 60, 'label': 'Average', 'reason': 'High spending at ZARA'}}
+INFO:werkzeug:127.0.0.1 - - [05/Jul/2026 11:46:53] "GET /insights HTTP/1.1" 200 -
+    Just look at this reply mannnnnnn if did it i did it 
+    
+#12:53PM i completed all i style everything Claude love u bro love u ur worth buying peakness only making it live remains it gonna be hard but still,I DON'T LOSE
+  no wayyy more errors whattt.
+  everything fixed now time to run and make it live yoo running well the AI insights is amazing 
+#Exit: 1:23PM 
+
+#Entry: 5/7/26 ~ 4PM now my Target is to test sending many receipt then make a database whole and then github,Live then prepration for Presentation also a Demo video 
+#Exit: 5:10PM ~ Done makeing A demo video now fixing things before pushing and other things 
+#Entry: 5/7/26 ~ 7:55PM 
+#Exit: 5/7/26 ~ 10PM dude i have to do something of DB backend is push on Github now database need to be think on 
+#Entry: 5/7/26 ~ 11:37PM
+
+==> Uploading build...
+==> Uploaded in 5.9s. Compression took 2.1s
+==> Build successful 🎉
+==> Deploying...
+==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+==> Running 'gunicorn app:app'
+[2026-07-05 18:38:53 +0000] [58] [INFO] Starting gunicorn 26.0.0
+[2026-07-05 18:38:53 +0000] [58] [INFO] Listening at: http://0.0.0.0:10000 (58)
+[2026-07-05 18:38:53 +0000] [58] [INFO] Using worker: sync
+[2026-07-05 18:38:53 +0000] [59] [INFO] Booting worker with pid: 59
+[2026-07-05 18:38:53 +0000] [58] [INFO] Control socket listening at /opt/render/.gunicorn/gunicorn.ctl
+127.0.0.1 - - [05/Jul/2026:18:38:53 +0000] "HEAD / HTTP/1.1" 404 0 "-" "Go-http-client/1.1"
+==> Your service is live 🎉
+
+#Exit: 6/7/26 ~ 12:12AM and a great milestone after spending hrs on error its fixed and Database and Back-end both are live next is our Frontend then whole website is ready A complete Prototype MVP alone let go I MADE IT!
+
+#Entry: 6/7/26 ~ 1:20AM time to live frontend also dude i found a major bug in my code main page show 2 receipts but AI is still using old dude and many bugs and error ahhh 
+  #2:02AM and the bug i think a major was everyone was using BASE_URL expect insights ai he was still hitting local host and i was debugging that why localhost was on i got Scared i thought its might be a serious problem but it was not 
+  #2:11AM and one more bug now i got to know the AI model is giving me response but in dollors since the amounts was in dollar yes that true it getting converted in rupees but the sign are still same But im smart i figured out it was in CRUD.py let fix it
+  

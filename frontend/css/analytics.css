@@ -1,0 +1,306 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary:   #6C63FF;
+  --bg:        #F4F5F9;
+  --surface:   #FFFFFF;
+  --text:      #1A1A2E;
+  --muted:     #888;
+  --warning:   #FF6B35;
+  --success:   #2ECC71;
+  --shadow:    0 2px 12px rgba(0,0,0,0.07);
+  --radius:    16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TOP BAR ── */
+.top-bar {
+  background: var(--surface);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid #EFEFEF;
+}
+.top-bar h2 {
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+}
+.icon-btn {
+  width: 40px; height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg);
+  font-size: 16px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.header-badge {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, #6C63FF, #9B8FFF);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 15px;
+}
+
+/* ── MAIN ── */
+main { padding: 20px 16px; }
+
+/* ── ANALYZE BUTTON ── */
+.analyze-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #6C63FF, #9B8FFF);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(108,99,255,0.35);
+  transition: opacity 0.2s;
+}
+.analyze-btn:hover { opacity: 0.92; }
+.analyze-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── HIDDEN ── */
+.hidden { display: none; }
+
+/* ── SECTION TITLE ── */
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title i { color: var(--primary); font-size: 14px; }
+.warning-title i { color: var(--warning); }
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 4px;
+}
+
+/* ── SUMMARY CARD ── */
+.summary-card { padding: 20px; }
+
+.summary-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.personality-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border-radius: 25px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  max-width: 65%;
+}
+.personality-badge i { font-size: 14px; }
+
+.score-circle {
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6C63FF, #9B8FFF);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(108,99,255,0.4);
+}
+.score-circle span {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+.score-circle small {
+  font-size: 9px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+/* Score color states */
+.score-circle.poor    { background: linear-gradient(135deg, #FF5252, #FF8A80); }
+.score-circle.average { background: linear-gradient(135deg, #FF9800, #FFB74D); }
+.score-circle.good    { background: linear-gradient(135deg, #6C63FF, #9B8FFF); }
+.score-circle.excellent { background: linear-gradient(135deg, #2ECC71, #27AE60); }
+
+.summary-line {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.score-reason {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── INSIGHTS LIST ── */
+.insight-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.insight-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.insight-list li::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ── WARNINGS ── */
+.warning-card {
+  border-left: 4px solid var(--warning);
+  background: #FFF8F5;
+}
+.warning-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.warning-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #C0392B;
+  line-height: 1.5;
+}
+.warning-list li::before {
+  content: '⚠';
+  font-size: 13px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+/* ── TIP ── */
+.tip-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border-left: 4px solid var(--success);
+  background: #F0FFF6;
+}
+.tip-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1A5C35;
+  font-weight: 500;
+}
+.tip-icon {
+  color: var(--success);
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── DETAILED ADVICE ── */
+.advice-item {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.advice-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.advice-text h5 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.advice-text p {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ── FORECAST ── */
+.forecast-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: linear-gradient(135deg, #EEF0FF, #E4E0FF);
+  border: none;
+}
+.forecast-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #3A3060;
+}
+.forecast-icon {
+  color: var(--primary);
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 480px) {
+  body { max-width: 480px; margin: 0 auto; }
+  .top-bar { max-width: 480px; }
+}
