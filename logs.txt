@@ -203,7 +203,45 @@ INFO:werkzeug:127.0.0.1 - - [05/Jul/2026 11:46:53] "GET /insights HTTP/1.1" 200 
   #2:02AM and the bug i think a major was everyone was using BASE_URL expect insights ai he was still hitting local host and i was debugging that why localhost was on i got Scared i thought its might be a serious problem but it was not 
   #2:11AM and one more bug now i got to know the AI model is giving me response but in dollors since the amounts was in dollar yes that true it getting converted in rupees but the sign are still same But im smart i figured out it was in CRUD.py let fix it 
   #2:47AM ok its AI prob i try 2-3 times changing prompt nothing happens I push my frontend on GitHub got a new problem with Netlify so the thing is its gimme a link this https://thereceiptiq.netlify.app/ and it start showing 404 but when i type this all "https://thereceiptiq.netlify.app/frontend/index.html" its works
-    don't know why but i can't use Github in Netlify need to shift its not working 
+    don't know why but i can't use Github in Netlify need to shift its not working, Raining peak cold weather 
   #3:15PM Fixed some more path errors so vercel can work with frontend ahh man got happy press on exit button 404 error let me go
+#Exit: 3:28AM something is wrong with Groq not working let see in the morning 
+#Entry: 6/7/26 ~ 12:30PM i don't know whyyyy why everything was working well on localhost but now errors the main question is why Groq is not working let figure out https://receiptiq-frontend-peach.vercel.app/index.html in night complete everything 
+#Exit: 6/7/26 ~ Fix more covert_to_int error i think Groq limit reached night now its working and just look at the logs 2026-07-06T07:10:57.513157071Z ==> Deploying...
+2026-07-06T07:10:57.583322101Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-07-06T07:11:08.233486847Z ==> Running 'gunicorn app:app'
+2026-07-06T07:11:34.526527731Z [2026-07-06 07:11:34 +0000] [58] [INFO] Starting gunicorn 26.0.0
+2026-07-06T07:11:34.527036669Z [2026-07-06 07:11:34 +0000] [58] [INFO] Listening at: http://0.0.0.0:10000 (58)
+2026-07-06T07:11:34.52704655Z [2026-07-06 07:11:34 +0000] [58] [INFO] Using worker: sync
+2026-07-06T07:11:34.534296548Z [2026-07-06 07:11:34 +0000] [60] [INFO] Booting worker with pid: 60
+2026-07-06T07:11:34.730043672Z [2026-07-06 07:11:34 +0000] [58] [INFO] Control socket listening at /opt/render/.gunicorn/gunicorn.ctl
+2026-07-06T07:11:35.351953139Z 127.0.0.1 - - [06/Jul/2026:07:11:35 +0000] "HEAD / HTTP/1.1" 404 0 "-" "Go-http-client/1.1"
+2026-07-06T07:11:38.485271458Z ==> Your service is live 🎉
+2026-07-06T07:11:38.584057993Z ==>
+2026-07-06T07:11:38.586479025Z ==> ///////////////////////////////////////////////////////////
+2026-07-06T07:11:38.589118121Z ==>
+2026-07-06T07:11:38.589858587Z 127.0.0.1 - - [06/Jul/2026:07:11:38 +0000] "GET / HTTP/1.1" 404 207 "-" "Go-http-client/2.0"
+2026-07-06T07:11:38.59139962Z ==> Available at your primary URL https://receiptiq-backend-zgyw.onrender.com
+2026-07-06T07:11:38.593554655Z ==>
+2026-07-06T07:11:38.595820154Z ==> ///////////////////////////////////////////////////////////
+2026-07-06T07:11:43.014449313Z 127.0.0.1 - - [06/Jul/2026:07:11:43 +0000] "GET /receipts HTTP/1.1" 200 624 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:11:46.529352568Z 127.0.0.1 - - [06/Jul/2026:07:11:46 +0000] "GET /receipts HTTP/1.1" 200 624 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:12:44.9756171Z 127.0.0.1 - - [06/Jul/2026:07:12:44 +0000] "GET /detailed_receipts HTTP/1.1" 200 3001 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:13:45.735880416Z 127.0.0.1 - - [06/Jul/2026:07:13:45 +0000] "GET /receipts HTTP/1.1" 200 624 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:14:38.418320382Z 127.0.0.1 - - [06/Jul/2026:07:14:38 +0000] "GET /insights HTTP/1.1" 200 621 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:15:18.131458722Z 127.0.0.1 - - [06/Jul/2026:07:15:18 +0000] "GET /receipts HTTP/1.1" 200 624 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:15:22.814948553Z 127.0.0.1 - - [06/Jul/2026:07:15:22 +0000] "GET /receipts HTTP/1.1" 200 624 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:16:04.695623856Z IMG-20260705-WA0013.jpg
+2026-07-06T07:16:04.695646907Z image/jpeg
+2026-07-06T07:16:04.695653077Z 127.0.0.1 - - [06/Jul/2026:07:16:04 +0000] "POST /upload HTTP/1.1" 200 61 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:16:08.825079965Z 127.0.0.1 - - [06/Jul/2026:07:16:08 +0000] "GET /receipts HTTP/1.1" 200 790 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:16:36.119431309Z 127.0.0.1 - - [06/Jul/2026:07:16:36 +0000] "GET /detailed_receipts HTTP/1.1" 200 3881 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+2026-07-06T07:16:50.097336208Z ==> Detected service running on port 10000
+2026-07-06T07:16:50.191358666Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2026-07-06T07:16:50.390454059Z 127.0.0.1 - - [06/Jul/2026:07:16:50 +0000] "GET /receipts HTTP/1.1" 200 790 "https://receiptiq-frontend-peach.vercel.app/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+
+
+And The ReceiptIQ is completed The Last Log here hoping 😁
+  
   
   
